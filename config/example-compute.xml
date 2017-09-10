@@ -32,31 +32,31 @@
 
   <bean class="org.apache.ignite.configuration.IgniteConfiguration">
         <!-- Set to true to enable distributed class loading for examples, default is false. -->
-        <property name="peerClassLoadingEnabled" value="true"/>  <property name="discoverySpi">
+        <property name="peerClassLoadingEnabled" value="true"/>  
+	<property name="discoverySpi">
 	    <bean class="org.apache.ignite.spi.discovery.tcp.TcpDiscoverySpi">
 	      <property name="ipFinder">
 		<bean class="org.apache.ignite.spi.discovery.tcp.ipfinder.vm.TcpDiscoveryVmIpFinder">
 		  <property name="addresses">
 		    <list>
 		      <!--
-										Explicitly specifying address of a local node to let it start
-									  and operate normally even if there is no more nodes in the cluster.
-										You can also optionally specify an individual port or port range.
-							  -->
-		      <value>localhost</value>
-
+			Explicitly specifying address of a local node to let it start
+			and operate normally even if there is no more nodes in the cluster.
+			You can also optionally specify an individual port or port range.
+			-->
+		      <value>127.0.0.1</value>
 		      <!-- 
 			  IP Address and optional port range of a remote node.
 			  You can also optionally specify an individual port and don't set
-										the port range at all.
+			  the port range at all.
 		      -->
-		      <value>localhost:47500..47509</value>
+		      <value>127.0.0.1:47500..47509</value>
 		    </list>
 		  </property>
 		</bean>
 	      </property>
 	    </bean>
-	  </property>
+	</property>
    </bean>
 
 </beans>
